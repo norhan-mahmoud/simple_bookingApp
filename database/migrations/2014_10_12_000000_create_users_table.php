@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('status', ['admin', 'employee'])->default('employee');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

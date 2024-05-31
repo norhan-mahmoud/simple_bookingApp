@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('employee_id')->nullable();
             $table->foreign('employee_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('status', ['approve', 'reject','pending'])->default('pending');
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
