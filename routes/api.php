@@ -15,11 +15,11 @@ use App\Http\Controllers\api\ClientController;
 |
 */
 Route::post('register', [ClientController::class, 'register']);
-Route::post('login', [ClientController::class, 'login'])->name('login');
+Route::post('login', [ClientController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/rooms/{type}',[ClientController::class, 'rooms']);
     Route::post('/request_room',[ClientController::class, 'requestRoom']);
-    Route::get('/request_room/{client_id}/',[ClientController::class, 'myRequests']);
+    Route::get('/request_room/{client}/',[ClientController::class, 'myRequests']);
 
 });
